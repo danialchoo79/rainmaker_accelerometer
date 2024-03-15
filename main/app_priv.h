@@ -9,7 +9,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#define REPORTING_PERIOD    5 /* Seconds */
+#define REPORTING_PERIOD    10 /* Seconds */
 
 extern esp_rmaker_device_t *accel_x_device;
 extern esp_rmaker_device_t *accel_y_device;

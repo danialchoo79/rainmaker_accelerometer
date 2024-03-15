@@ -39,13 +39,13 @@ static int16_t accel_z_axis;
 
 static void app_sensor_update(TimerHandle_t handle)
 {
-    // accel_x_axis = adxl345_read_x(I2C_CONTROLLER_1);
-    // accel_y_axis = adxl345_read_y(I2C_CONTROLLER_1);
-    // accel_z_axis = adxl345_read_z(I2C_CONTROLLER_1);
+    accel_x_axis = adxl345_read_x(I2C_CONTROLLER_0);
+    accel_y_axis = adxl345_read_y(I2C_CONTROLLER_0);
+    accel_z_axis = adxl345_read_z(I2C_CONTROLLER_0);
 
-    accel_x_axis = 10;
-    accel_y_axis = 20;
-    accel_z_axis = 30;
+    // accel_x_axis = 10;
+    // accel_y_axis = 20;
+    // accel_z_axis = 30;
     
     esp_rmaker_param_update_and_report(
             esp_rmaker_device_get_param_by_type(accel_x_device, ESP_RMAKER_PARAM_TEMPERATURE),
@@ -62,8 +62,9 @@ static void app_sensor_update(TimerHandle_t handle)
 
 esp_err_t app_sensor_init(void)
 {
-    i2c_init(I2C_CONTROLLER_1, 22, 23);
-    adxl345_init(I2C_CONTROLLER_1);
+    // SCL pin 7 SDA pin 6
+    i2c_init(I2C_CONTROLLER_0, 6, 7);
+    adxl345_init(I2C_CONTROLLER_0);
 
     sensor_timer = xTimerCreate("app_sensor_update_tm", (REPORTING_PERIOD * 1000) / portTICK_PERIOD_MS,
                             pdTRUE, NULL, app_sensor_update);

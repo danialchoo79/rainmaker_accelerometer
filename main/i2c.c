@@ -94,7 +94,7 @@ esp_err_t i2c_write_buf(uint8_t i2c_master_port, uint8_t address, uint8_t comman
 	if (ret == ESP_OK) {
 		//printf("i2c_write successful\r\n");
 	} else {
-		printf("i2c_write_buf failed\r\n");
+		// printf("i2c_write_buf failed\r\n");
 	}
 
 	return(ret);
