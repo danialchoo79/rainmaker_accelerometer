@@ -62,8 +62,8 @@ static void app_sensor_update(TimerHandle_t handle)
 
 esp_err_t app_sensor_init(void)
 {
-    // SCL pin 7 SDA pin 6
-    i2c_init(I2C_CONTROLLER_0, 6, 7);
+    // SDA pin 6 SCL pin 7
+    i2c_init(I2C_CONTROLLER_0, 7, 0);
     adxl345_init(I2C_CONTROLLER_0);
 
     sensor_timer = xTimerCreate("app_sensor_update_tm", (REPORTING_PERIOD * 1000) / portTICK_PERIOD_MS,
