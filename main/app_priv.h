@@ -15,4 +15,7 @@ extern esp_rmaker_device_t *accel_x_device;
 extern esp_rmaker_device_t *accel_y_device;
 extern esp_rmaker_device_t *accel_z_device;
 
+// extern esp_rmaker_device_t *roll;
+// extern esp_rmaker_device_t *pitch;
+
 void app_driver_init(void);

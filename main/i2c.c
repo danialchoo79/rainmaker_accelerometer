@@ -1,3 +1,9 @@
+/*
+Danial C.
+Purpose: For Reading and Writing on I2C
+Refer to https://docs.espressif.com/projects/esp-idf/en/v5.1/esp32/api-reference/peripherals/i2c.html
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <time.h>
@@ -9,10 +15,12 @@
 #include "driver/i2c.h"
 #include "i2c.h"
 
+// Initializes I2C
 void i2c_init(uint8_t i2c_master_port, uint8_t sda_io_num, uint8_t scl_io_num)
 {
 	esp_err_t res;
 
+	// Configures the driver for the I2C Communications
 	i2c_config_t conf = {
 	    .mode = I2C_MODE_MASTER,
 	    .sda_io_num = sda_io_num,         		// select GPIO specific to your project
@@ -22,15 +30,25 @@ void i2c_init(uint8_t i2c_master_port, uint8_t sda_io_num, uint8_t scl_io_num)
 	    .master.clk_speed = I2C_MASTER_FREQ_HZ,  // select frequency specific to your project
 	};
 
+	// Check if configuration works
 	res = i2c_param_config(i2c_master_port, &conf);
 	if (res != ESP_OK) printf("Error in i2c_param_config()\r\n");
 
+	// Check if I2C installation works
 	res = i2c_driver_install(i2c_master_port, I2C_MODE_MASTER, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
 	if (res != ESP_OK) printf("Error in i2c_driver_install()\r\n");
 }
 
+// I2C Master Write
 esp_err_t i2c_write_byte(uint8_t i2c_master_port, uint8_t address, uint8_t command, uint8_t data)
 {
+	/*
+		1. Create and initialize an I2C commands list
+		2. Starts Master
+		3. Master Queues Write Single Byte
+		4. Master Begins to Write Single Byte
+		5. Release the resources
+	*/
 	i2c_cmd_handle_t cmd = i2c_cmd_link_create();
 
 	i2c_master_start(cmd);
@@ -50,8 +68,16 @@ esp_err_t i2c_write_byte(uint8_t i2c_master_port, uint8_t address, uint8_t comma
 	return(ret);
 }
 
+
 esp_err_t i2c_write_short(uint8_t i2c_master_port, uint8_t address, uint8_t command, uint16_t data)
 {
+	/*
+		1. Create and initialize an I2C commands list
+		2. Starts Master
+		3. Master Queues Write 16 Bit Integer
+		4. Master Begins to Write 16 Bit Integer
+		5. Release the resources
+	*/
 	i2c_cmd_handle_t cmd = i2c_cmd_link_create();
 
 	i2c_master_start(cmd);
@@ -76,6 +102,14 @@ esp_err_t i2c_write_short(uint8_t i2c_master_port, uint8_t address, uint8_t comm
 
 esp_err_t i2c_write_buf(uint8_t i2c_master_port, uint8_t address, uint8_t command, uint8_t *data, uint8_t len)
 {
+	/*
+		1. Create and initialize an I2C commands list
+		2. Starts Master
+		3. Master Queues Write Buffer Data
+		4. Master Begins to Write Buffer Data
+		5. Release the resources
+	*/
+
 	i2c_cmd_handle_t cmd = i2c_cmd_link_create();
 
 	i2c_master_start(cmd);

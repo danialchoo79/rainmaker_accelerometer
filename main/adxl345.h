@@ -21,6 +21,8 @@
 #ifndef MAIN_ADXL345_H_
 #define MAIN_ADXL345_H_
 
+/*-----------------Register Names--------------*/
+
 #define ADXL345_SLAVE_ADDRESS			0x1D
 #define ADXL345_ALT_SLAVE_ADDRESS		0x53
 
@@ -72,6 +74,7 @@
 #define INACT_Y_EN				0x02
 #define INACT_Z_EN				0x01
 
+// Function Prototypes
 void adxl345_init(uint8_t i2c_master_port);
 int16_t adxl345_read_x(uint8_t i2c_master_port);
 int16_t adxl345_read_y(uint8_t i2c_master_port);

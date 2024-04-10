@@ -5,7 +5,7 @@
 #define I2C_CONTROLLER_0		0
 #define I2C_CONTROLLER_1		1
 
-#define I2C_MASTER_FREQ_HZ		400000
+#define I2C_MASTER_FREQ_HZ		400000 // Fast Mode 400kHz, Standard 100 kHz
 
 #define I2C_MASTER_RX_BUF_DISABLE	0
 #define I2C_MASTER_TX_BUF_DISABLE	0
@@ -16,6 +16,7 @@
 #define ACK_VAL				0x0
 #define NACK_VAL			0x1
 
+// Function Prototypes
 void i2c_init(uint8_t i2c_master_port, uint8_t sda_io_num, uint8_t scl_io_num);
 
 esp_err_t i2c_write_byte(uint8_t i2c_master_port, uint8_t address, uint8_t command, uint8_t data);

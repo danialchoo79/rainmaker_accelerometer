@@ -20,6 +20,8 @@ esp_rmaker_device_t *accel_x_device;
 esp_rmaker_device_t *accel_y_device;
 esp_rmaker_device_t *accel_z_device;
 
+// esp_rmaker_device_t *pitch;
+// esp_rmaker_device_t *roll;
 
 void app_main()
 {
@@ -64,6 +66,14 @@ void app_main()
     /* Create a device and add the relevant parameters to it */
     accel_z_device = esp_rmaker_temp_sensor_device_create("Accelero z-axis", NULL, 0);
     esp_rmaker_node_add_device(node, accel_z_device);
+
+    // /* Create a device and add the relevant parameters to it */
+    // roll = esp_rmaker_temp_sensor_device_create("Accelero roll", NULL, 0);
+    // esp_rmaker_node_add_device(node, roll);
+    
+    // /* Create a device and add the relevant parameters to it */
+    // pitch = esp_rmaker_temp_sensor_device_create("Accelero pitch", NULL, 0);
+    // esp_rmaker_node_add_device(node, pitch);
 
     /* Enable OTA */
     esp_rmaker_ota_enable_default();

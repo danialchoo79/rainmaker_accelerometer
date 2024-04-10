@@ -33,10 +33,10 @@ int16_t swap_int16( int16_t val )
 void adxl345_init(uint8_t i2c_master_port)
 {
 	printf("Manufacturer ID:        0x%02X\r\n",i2c_read_byte(i2c_master_port, ADXL345_ALT_SLAVE_ADDRESS, ADXL345_DEVID));
-	i2c_write_byte(i2c_master_port, ADXL345_ALT_SLAVE_ADDRESS, ADXL345_POWER_CTL, 0b00001000);	// Enable measure mode
+	i2c_write_byte(i2c_master_port, ADXL345_ALT_SLAVE_ADDRESS, ADXL345_POWER_CTL, 0b00001000);	// Enable measure mode, ADXL in standby mode w min. power .cons. 
 
 	// Enable threshold interrupt on Z axis
-	i2c_write_byte(i2c_master_port, ADXL345_ALT_SLAVE_ADDRESS, ADXL345_THRESH_ACT, 4);			// Set threshold
+	i2c_write_byte(i2c_master_port, ADXL345_ALT_SLAVE_ADDRESS, ADXL345_THRESH_ACT, 4);			// Set threshold for detecting activity, scale factor 62.5
 	i2c_write_byte(i2c_master_port, ADXL345_ALT_SLAVE_ADDRESS, ADXL345_ACT_INACT_CTL, ACT_AC_COUPLED | ACT_Z_EN);	// Enable activity in Z axis
 	i2c_write_byte(i2c_master_port, ADXL345_ALT_SLAVE_ADDRESS, ADXL345_INT_MAP, 0b00000000);		// All functions generate INT1
 	i2c_write_byte(i2c_master_port, ADXL345_ALT_SLAVE_ADDRESS, ADXL345_INT_ENABLE, ACTIVITY);		// Enable activity function

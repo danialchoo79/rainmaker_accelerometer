@@ -6,5 +6,8 @@
     "idf.portWin": "COM5",
     "idf.openOcdConfigs": [
         "board/esp32c6-ftdi.cfg"
-    ]
+    ],
+    "files.associations": {
+        "time.h": "c"
+    }
 }

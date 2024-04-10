@@ -1,0 +1,80 @@
+[0;31mE (32622) esp_rmaker_param: Current time not yet available. Cannot report time series data.[0m
+[0;32mI (32622) esp_rmaker_param: Reporting params: {"Accelero x-axis":{"Temperature":25.00000}}[0m
+[0;31mE (32632) esp_rmaker_param: Current time not yet available. Cannot report time series data.[0m
+[0;32mI (32632) esp_rmaker_param: Reporting params: {"Accelero y-axis":{"Temperature":-10.00000}}[0m
+[0;31mE (32642) esp_rmaker_param: Current time not yet available. Cannot report time series data.[0m
+[0;32mI (32652) esp_rmaker_param: Reporting params: {"Accelero z-axis":{"Temperature":-10.00000}}[0m
+[0;32mI (34332) esp_rmaker_time: SNTP Synchronised.[0m
+[0;32mI (34332) esp_rmaker_time: The current time is: Tue Apr  9 23:41:02 2024 +0800[CST], DST: No.[0m
+[0;32mI (42622) esp_rmaker_param: Reporting Time Series Data for Accelero x-axis.Temperature[0m
+[0;32mI (42622) esp_rmaker_param: Reporting params: {"Accelero x-axis":{"Temperature":24.00000}}[0m
+[0;32mI (42632) esp_rmaker_param: Reporting Time Series Data for Accelero y-axis.Temperature[0m
+[0;32mI (42632) esp_rmaker_param: Reporting params: {"Accelero y-axis":{"Temperature":-8.00000}}[0m
+[0;32mI (42642) esp_rmaker_param: Reporting Time Series Data for Accelero z-axis.Temperature[0m
+[0;32mI (42652) esp_rmaker_param: Reporting params: {"Accelero z-axis":{"Temperature":-8.00000}}[0m
+[0;32mI (52622) esp_rmaker_param: Reporting Time Series Data for Accelero x-axis.Temperature[0m
+[0;32mI (52622) esp_rmaker_param: Reporting params: {"Accelero x-axis":{"Temperature":23.00000}}[0m
+[0;32mI (52622) esp_rmaker_param: Reporting Time Series Data for Accelero y-axis.Temperature[0m
+[0;32mI (52632) esp_rmaker_param: Reporting params: {"Accelero y-axis":{"Temperature":-9.00000}}[0m
+[0;32mI (52642) esp_rmaker_param: Reporting Time Series Data for Accelero z-axis.Temperature[0m
+[0;32mI (52652) esp_rmaker_param: Reporting params: {"Accelero z-axis":{"Temperature":-9.00000}}[0m
+[0;32mI (62622) esp_rmaker_param: Reporting Time Series Data for Accelero x-axis.Temperature[0m
+[0;32mI (62622) esp_rmaker_param: Reporting params: {"Accelero x-axis":{"Temperature":25.00000}}[0m
+[0;32mI (62622) esp_rmaker_param: Reporting Time Series Data for Accelero y-axis.Temperature[0m
+[0;32mI (62632) esp_rmaker_param: Reporting params: {"Accelero y-axis":{"Temperature":-9.00000}}[0m
+[0;32mI (62642) esp_rmaker_param: Reporting Time Series Data for Accelero z-axis.Temperature[0m
+[0;32mI (62652) esp_rmaker_param: Reporting params: {"Accelero z-axis":{"Temperature":-9.00000}}[0m
+[0;32mI (72622) esp_rmaker_param: Reporting Time Series Data for Accelero x-axis.Temperature[0m
+[0;32mI (72622) esp_rmaker_param: Reporting params: {"Accelero x-axis":{"Temperature":24.00000}}[0m
+[0;32mI (72632) esp_rmaker_param: Reporting Time Series Data for Accelero y-axis.Temperature[0m
+[0;32mI (72632) esp_rmaker_param: Reporting params: {"Accelero y-axis":{"Temperature":-10.00000}}[0m
+[0;32mI (72642) esp_rmaker_param: Reporting Time Series Data for Accelero z-axis.Temperature[0m
+[0;32mI (72652) esp_rmaker_param: Reporting params: {"Accelero z-axis":{"Temperature":-10.00000}}[0m
+[0;32mI (82622) esp_rmaker_param: Reporting Time Series Data for Accelero x-axis.Temperature[0m
+[0;32mI (82622) esp_rmaker_param: Reporting params: {"Accelero x-axis":{"Temperature":24.00000}}[0m
+[0;32mI (82622) esp_rmaker_param: Reporting Time Series Data for Accelero y-axis.Temperature[0m
+[0;32mI (82632) esp_rmaker_param: Reporting params: {"Accelero y-axis":{"Temperature":-10.00000}}[0m
+[0;32mI (82642) esp_rmaker_param: Reporting Time Series Data for Accelero z-axis.Temperature[0m
+[0;32mI (82652) esp_rmaker_param: Reporting params: {"Accelero z-axis":{"Temperature":-10.00000}}[0m
+[0;32mI (92622) esp_rmaker_param: Reporting Time Series Data for Accelero x-axis.Temperature[0m
+[0;32mI (92622) esp_rmaker_param: Reporting params: {"Accelero x-axis":{"Temperature":25.00000}}[0m
+[0;32mI (92622) esp_rmaker_param: Reporting Time Series Data for Accelero y-axis.Temperature[0m
+[0;32mI (92632) esp_rmaker_param: Reporting params: {"Accelero y-axis":{"Temperature":-9.00000}}[0m
+[0;32mI (92642) esp_rmaker_param: Reporting Time Series Data for Accelero z-axis.Temperature[0m
+[0;32mI (92652) esp_rmaker_param: Reporting params: {"Accelero z-axis":{"Temperature":-9.00000}}[0m
+[0;32mI (102622) esp_rmaker_param: Reporting Time Series Data for Accelero x-axis.Temperature[0m
+[0;32mI (102622) esp_rmaker_param: Reporting params: {"Accelero x-axis":{"Temperature":24.00000}}[0m
+[0;32mI (102622) esp_rmaker_param: Reporting Time Series Data for Accelero y-axis.Temperature[0m
+[0;32mI (102632) esp_rmaker_param: Reporting params: {"Accelero y-axis":{"Temperature":-10.00000}}[0m
+[0;32mI (102642) esp_rmaker_param: Reporting Time Series Data for Accelero z-axis.Temperature[0m
+[0;32mI (102652) esp_rmaker_param: Reporting params: {"Accelero z-axis":{"Temperature":-10.00000}}[0m
+[0;32mI (112622) esp_rmaker_param: Reporting Time Series Data for Accelero x-axis.Temperature[0m
+[0;32mI (112622) esp_rmaker_param: Reporting params: {"Accelero x-axis":{"Temperature":24.00000}}[0m
+[0;32mI (112622) esp_rmaker_param: Reporting Time Series Data for Accelero y-axis.Temperature[0m
+[0;32mI (112632) esp_rmaker_param: Reporting params: {"Accelero y-axis":{"Temperature":-10.00000}}[0m
+[0;32mI (112642) esp_rmaker_param: Reporting Time Series Data for Accelero z-axis.Temperature[0m
+[0;32mI (112652) esp_rmaker_param: Reporting params: {"Accelero z-axis":{"Temperature":-10.00000}}[0m
+[0;32mI (122622) esp_rmaker_param: Reporting Time Series Data for Accelero x-axis.Temperature[0m
+[0;32mI (122622) esp_rmaker_param: Reporting params: {"Accelero x-axis":{"Temperature":24.00000}}[0m
+[0;32mI (122622) esp_rmaker_param: Reporting Time Series Data for Accelero y-axis.Temperature[0m
+[0;32mI (122632) esp_rmaker_param: Reporting params: {"Accelero y-axis":{"Temperature":-9.00000}}[0m
+[0;32mI (122642) esp_rmaker_param: Reporting Time Series Data for Accelero z-axis.Temperature[0m
+[0;32mI (122652) esp_rmaker_param: Reporting params: {"Accelero z-axis":{"Temperature":-9.00000}}[0m
+[0;32mI (132622) esp_rmaker_param: Reporting Time Series Data for Accelero x-axis.Temperature[0m
+[0;32mI (132622) esp_rmaker_param: Reporting params: {"Accelero x-axis":{"Temperature":24.00000}}[0m
+[0;32mI (132622) esp_rmaker_param: Reporting Time Series Data for Accelero y-axis.Temperature[0m
+[0;32mI (132632) esp_rmaker_param: Reporting params: {"Accelero y-axis":{"Temperature":-10.00000}}[0m
+[0;32mI (132642) esp_rmaker_param: Reporting Time Series Data for Accelero z-axis.Temperature[0m
+[0;32mI (132652) esp_rmaker_param: Reporting params: {"Accelero z-axis":{"Temperature":-10.00000}}[0m
+[0;32mI (142622) esp_rmaker_param: Reporting Time Series Data for Accelero x-axis.Temperature[0m
+[0;32mI (142622) esp_rmaker_param: Reporting params: {"Accelero x-axis":{"Temperature":24.00000}}[0m
+[0;32mI (142622) esp_rmaker_param: Reporting Time Series Data for Accelero y-axis.Temperature[0m
+[0;32mI (142632) esp_rmaker_param: Reporting params: {"Accelero y-axis":{"Temperature":-9.00000}}[0m
+[0;32mI (142642) esp_rmaker_param: Reporting Time Series Data for Accelero z-axis.Temperature[0m
+[0;32mI (142652) esp_rmaker_param: Reporting params: {"Accelero z-axis":{"Temperature":-9.00000}}[0m
+[0;32mI (152622) esp_rmaker_param: Reporting Time Series Data for Accelero x-axis.Temperature[0m
+[0;32mI (152622) esp_rmaker_param: Reporting params: {"Accelero x-axis":{"Temperature":24.00000}}[0m
+[0;32mI (152622) esp_rmaker_param: Reporting Time Series Data for Accelero y-axis.Temperature[0m
+[0;32mI (152632) esp_rmaker_param: Reporting params: {"Accelero y-axis":{"Temperature":-8.00000}}[0m
+[0;32mI (152642) esp_rmaker_param: Reporting Time Series Data for Accelero z-axis.Temperature[0m
+[0;32mI (152652) esp_rmaker_param: Reporting params: {"Accelero z-axis":{"Temperature":-8.00000}}[0m

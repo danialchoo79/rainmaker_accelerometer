@@ -19,6 +19,7 @@
 #include "app_priv.h"
 #include "i2c.h"
 #include "adxl345.h"
+#include <math.h>
 
 
 /* This is the button that is used for toggling the power */
@@ -26,27 +27,41 @@
 #define BUTTON_ACTIVE_LEVEL  0
 /* This is the GPIO on which the power will be set */
 #define OUTPUT_GPIO    19
+#define PI 3.14159265358979323846
+
 
 static TimerHandle_t sensor_timer;
 
 #define WIFI_RESET_BUTTON_TIMEOUT       3
 #define FACTORY_RESET_BUTTON_TIMEOUT    10
+#define NUM_DATA_POINTS 15
 
-static int16_t accel_x_axis;
-static int16_t accel_y_axis;
-static int16_t accel_z_axis;
+static float accel_x_axis;
+static float accel_y_axis;
+static float accel_z_axis;
 
+// static int16_t roll_angle;
+// static int16_t pitch_angle;
 
 static void app_sensor_update(TimerHandle_t handle)
 {
-    accel_x_axis = adxl345_read_x(I2C_CONTROLLER_0);
-    accel_y_axis = adxl345_read_y(I2C_CONTROLLER_0);
-    accel_z_axis = adxl345_read_z(I2C_CONTROLLER_0);
+    // Using No- Turn Single Point Calibration Scheme
+    // Measure average for 10 data points for X,Y and minus measured value
+    // For the z axis, i used Z_Measured - (Z_1g - S_z)
+    // For more info, check ADXL345 Datasheet
 
-    // accel_x_axis = 10;
-    // accel_y_axis = 20;
-    // accel_z_axis = 30;
-    
+    accel_x_axis = (float)((adxl345_read_x(I2C_CONTROLLER_0) - 24)* 3.9)/1000.0f;
+    accel_y_axis = (float)((adxl345_read_y(I2C_CONTROLLER_0) + 9)*3.9)/1000.0f;
+    accel_z_axis = (float)((adxl345_read_z(I2C_CONTROLLER_0) + 8)*3.9)/1000.0f;
+
+    // // Calculate roll and pitch in radians https://www.analog.com/en/resources/app-notes/an-1057.html
+    // roll_angle = atan2((double)accel_y_axis, sqrt((double)accel_x_axis * (double)accel_x_axis + (double)accel_z_axis * (double)accel_z_axis));
+    // pitch_angle = atan2((double)accel_x_axis, sqrt((double)accel_y_axis * (double)accel_y_axis + (double)accel_z_axis * (double)accel_z_axis));
+
+    // // Convert radians to degrees
+    // roll_angle = roll_angle * (180.0 / PI);
+    // pitch_angle = pitch_angle * (180.0 / PI);
+
     esp_rmaker_param_update_and_report(
             esp_rmaker_device_get_param_by_type(accel_x_device, ESP_RMAKER_PARAM_TEMPERATURE),
             esp_rmaker_float(accel_x_axis));
@@ -58,11 +73,20 @@ static void app_sensor_update(TimerHandle_t handle)
     esp_rmaker_param_update_and_report(
             esp_rmaker_device_get_param_by_type(accel_z_device, ESP_RMAKER_PARAM_TEMPERATURE),
             esp_rmaker_float(accel_z_axis));
+    
+    //  esp_rmaker_param_update_and_report(
+    //         esp_rmaker_device_get_param_by_type(pitch_angle, ESP_RMAKER_PARAM_TEMPERATURE),
+    //         esp_rmaker_float(pitch_angle));
+    
+    // esp_rmaker_param_update_and_report(
+    //         esp_rmaker_device_get_param_by_type(roll_angle, ESP_RMAKER_PARAM_TEMPERATURE),
+    //         esp_rmaker_float(roll_angle));
+
 }
 
 esp_err_t app_sensor_init(void)
 {
-    // SDA pin 6 SCL pin 7
+    // SDA pin 7 SCL pin 0
     i2c_init(I2C_CONTROLLER_0, 7, 0);
     adxl345_init(I2C_CONTROLLER_0);
 
