@@ -50,7 +50,7 @@ static void app_sensor_update(TimerHandle_t handle)
     // For the z axis, i used Z_Measured - (Z_1g - S_z)
     // For more info, check ADXL345 Datasheet
 
-    accel_x_axis = (float)((adxl345_read_x(I2C_CONTROLLER_0) - 24)* 3.9)/1000.0f;
+    accel_x_axis = (float)((adxl345_read_x(I2C_CONTROLLER_0) - 24)*3.9)/1000.0f;
     accel_y_axis = (float)((adxl345_read_y(I2C_CONTROLLER_0) + 9)*3.9)/1000.0f;
     accel_z_axis = (float)((adxl345_read_z(I2C_CONTROLLER_0) + 8)*3.9)/1000.0f;
 
