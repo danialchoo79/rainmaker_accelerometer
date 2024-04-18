@@ -5,7 +5,7 @@ Currently, the maintenance of buildings is a manual process.
 
 This project aims to develop a self-monitoring solution of the structural integrity of buildings, through the use of Internet of Things (IoT).
 
-The entire project consists of 3 sensors connected on a common network. The sensors are -- (1) Flex Sensor, (2) Tilt Sensor, (3) Rain Sensor.
+The entire project consists of 4 nodes connected on a common network. The sensors are -- (1) Buzzer w Flashing LED, (2) Tilt Sensor, (3) Rain Sensor, (4) Flex Sensor.
 
 This repository will only cover (2) Tilt Sensor.
 
@@ -24,13 +24,13 @@ It uses the ESP32-C6 board, which supports up to WiFi6 in 2.4GHsz band. For Seri
 - This project uses an accelerometer to sense gravitational force of up to +/-2g and sends that information wirelessly, to be visualized in ESP Rainmaker App.
 - The sensor value is sent every x number of seconds. Settings can be changed in app_priv.h.
 - It will consistently send data in x,y,z g force readings over +/-2g sensitivity range.
-- You can check the g foirce reading changes in the ESP Rainmaker phone app.
+- You can check the g force reading changes in the ESP Rainmaker phone app.
 
-## Hardware?
+## Hardware
 
 This project, for (2) Tilt Sensor, comes with its portable power source, 9V Battery, Bulk Converter and a Junction Box Casing.
 
-This is the overall concept of the project. These components can be changed to suit the design needs.
+These components can be changed to suit the design needs.
 
 ### Reset to Factory
 
